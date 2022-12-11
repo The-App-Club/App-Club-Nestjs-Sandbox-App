@@ -3,6 +3,7 @@ import {Cat} from '@/graphql.schema';
 
 @Injectable()
 export class CatsService {
+  // supabaseやらplanetscale,faunaにつなぐレイヤー
   private readonly cats: Array<Cat & {ownerId?: number}> = [
     {id: 1, name: 'Cat', age: 5, ownerId: 1},
   ];
