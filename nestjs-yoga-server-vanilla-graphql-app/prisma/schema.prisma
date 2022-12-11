@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Owner {
+  id   Int    @id @default(autoincrement())
+  name String
+  age  Int
+  cats Cat[]
+}
+
+model Cat {
+  id      Int    @id @default(autoincrement())
+  name    String
+  age     Int
+  ownerId Int
+  owner   Owner  @relation(fields: [ownerId], references: [id])
+
+  @@index([ownerId])
+}

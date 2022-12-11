@@ -5,3 +5,6 @@ node_modules
 .env*
 tsconfig.build.tsbuildinfo
 yarn.lock
+.node-version
+patches/grant.sql
+prisma/schema.prisma

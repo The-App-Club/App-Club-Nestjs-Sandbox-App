@@ -1,0 +1,1 @@
+grant all CREATE, ALTER, DROP, REFERENCES ON *.* to "7kdsnwcpj5mh3pafppo7@ap-northeast.connect.psdb.cloud/nice_db";
