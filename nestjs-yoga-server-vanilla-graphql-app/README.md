@@ -1,3 +1,8 @@
+- Todo
+
+  - Cat を Pet に変えた場合のシナリオを想定する
+  - Id の紐づけ方 auto increment >>> cuid
+
 - Reference
   - [graphql-yoga-nestjs-v9](https://the-guild.dev/blog/graphql-yoga-nestjs-v9)
   - [schema-first](https://github.com/charlypoly/graphql-yoga-nestjs/tree/master/examples/schema-first)
@@ -11,6 +16,7 @@
   - [shadow-database-user-permissions](prisma.io/docs/concepts/components/prisma-migrate/shadow-database#shadow-database-user-permissions)
   - [script-to-create-user](https://planetscale.com/docs/reference/import-tool-user-requirements#script-to-create-user)
   - [コードファーストとスキーマファースト](https://zenn.dev/waddy/books/graphql-nestjs-nextjs-bootcamp/viewer/nestjs#%E3%82%B3%E3%83%BC%E3%83%89%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88%E3%81%A8%E3%82%B9%E3%82%AD%E3%83%BC%E3%83%9E%E3%83%95%E3%82%A1%E3%83%BC%E3%82%B9%E3%83%88)
+  - [If you use PlanetScale, which does not support foreign keys, we generally recommend that you use db push rather than Prisma Migrate.](https://www.prisma.io/docs/concepts/components/prisma-schema/relations/relation-mode#:~:text=If%20you%20use%20PlanetScale%2C%20which%20does%20not%20support%20foreign%20keys%2C%20we%20generally%20recommend%20that%20you%20use%20db%20push%20rather%20than%20Prisma%20Migrate.)
 
 ### DB setup
 
@@ -94,6 +100,12 @@ nice_db/initial-setup> describe Owner;
 | name  | varchar(191) | NO   |     | NULL    |                |
 | age   | int          | NO   |     | NULL    |                |
 +-------+--------------+------+-----+---------+----------------+
+```
+
+### Populate Data
+
+```bash
+$ time yarn seed
 ```
 
 ### Launch Prisma Studio
