@@ -1,4 +1,10 @@
-import {ParseIntPipe, UseGuards} from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Logger,
+  ParseIntPipe,
+  UseGuards,
+} from '@nestjs/common';
 import {Args, Mutation, Query, Resolver, Subscription} from '@nestjs/graphql';
 import {PubSub} from 'graphql-subscriptions';
 import {Cat} from '@/graphql.schema';
@@ -23,12 +29,26 @@ export class CatsResolver {
     @Args('id', ParseIntPipe)
     id: number
   ): Promise<Cat> {
-    return this.catsService.findOneById(id);
+    try {
+      throw new HttpException(
+        {
+          status: HttpStatus.INTERNAL_SERVER_ERROR,
+          error: 'Something went wrong...',
+        },
+        500
+      );
+      return this.catsService.findOneById(id);
+    } catch (error) {
+      console.log(error);
+      Logger.debug(error);
+      Logger.error('Something went wrong...');
+      return;
+    }
   }
 
   @Mutation('createCat')
   async create(@Args('createCatInput') args: CreateCatDto): Promise<Cat> {
-    const createdCat = await this.catsService.create(args);
+    const createdCat = this.catsService.create(args);
     pubSub.publish('catCreated', {catCreated: createdCat});
     return createdCat;
   }
