@@ -1,0 +1,10 @@
+mutation a {
+  createCat(createCatInput: {name: "Nice cat", age: 22}) {
+    id
+    name
+    age
+    owner {
+      id
+    }
+  }
+}

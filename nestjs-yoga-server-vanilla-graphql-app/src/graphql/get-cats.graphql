@@ -1,0 +1,10 @@
+query a {
+  cats {
+    id
+    name
+    age
+    owner {
+      id
+    }
+  }
+}
