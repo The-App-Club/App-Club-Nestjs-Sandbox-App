@@ -3,4 +3,5 @@ node_modules
 .prettierignore
 .eslintignore
 .env*
+tsconfig.build.tsbuildinfo
 yarn.lock

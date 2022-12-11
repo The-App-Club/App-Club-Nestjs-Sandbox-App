@@ -1,6 +1,6 @@
 import {Parent, ResolveField, Resolver} from '@nestjs/graphql';
 import {Cat, Owner} from '@/graphql.schema';
-import {OwnersService} from '@/owners/owners.service';
+import {OwnersService} from '@/features/owners/owners.service';
 
 @Resolver('Cat')
 export class CatOwnerResolver {

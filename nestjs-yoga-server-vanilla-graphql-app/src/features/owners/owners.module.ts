@@ -1,5 +1,5 @@
 import {Module} from '@nestjs/common';
-import {OwnersService} from '@/owners/owners.service';
+import {OwnersService} from '@/features/owners/owners.service';
 
 @Module({
   providers: [OwnersService],
