@@ -2,3 +2,4 @@
   - [graphql-yoga-nestjs-v9](https://the-guild.dev/blog/graphql-yoga-nestjs-v9)
   - [schema-first](https://github.com/charlypoly/graphql-yoga-nestjs/tree/master/examples/schema-first)
   - [nestjs quick-start](https://docs.nestjs.com/graphql/quick-start)
+  - [prisma seed-database](https://www.prisma.io/docs/guides/database/seed-database)
