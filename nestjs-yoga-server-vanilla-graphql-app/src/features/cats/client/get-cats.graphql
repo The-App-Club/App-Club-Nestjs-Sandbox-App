@@ -5,6 +5,8 @@ query a {
     age
     owner {
       id
+      name
+      age
     }
   }
 }

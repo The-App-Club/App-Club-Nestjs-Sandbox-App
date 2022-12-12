@@ -1,7 +1,7 @@
-import {Injectable, Logger} from '@nestjs/common';
+import {Injectable} from '@nestjs/common';
 import {Cat} from '@/graphql.schema';
 import {PrismaService} from '@/prisma.service';
-import {Cat as ICat, Prisma} from '@prisma/client';
+import {Cat as ICat} from '@prisma/client';
 
 @Injectable()
 export class CatsService {

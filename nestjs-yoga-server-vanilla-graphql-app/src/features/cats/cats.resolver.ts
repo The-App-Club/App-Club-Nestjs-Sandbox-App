@@ -30,6 +30,10 @@ export class CatsResolver {
     id: number
   ): Promise<Cat> {
     try {
+      return this.catsService.findOneById(id);
+    } catch (error) {
+      console.log(error);
+      Logger.error('Something went wrong...');
       throw new HttpException(
         {
           status: HttpStatus.INTERNAL_SERVER_ERROR,
@@ -37,12 +41,6 @@ export class CatsResolver {
         },
         500
       );
-      return this.catsService.findOneById(id);
-    } catch (error) {
-      console.log(error);
-      Logger.debug(error);
-      Logger.error('Something went wrong...');
-      return;
     }
   }
 
