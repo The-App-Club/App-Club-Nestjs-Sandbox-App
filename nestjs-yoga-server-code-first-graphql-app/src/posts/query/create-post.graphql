@@ -1,0 +1,8 @@
+mutation {
+  createPost(title: "Todays Bebop", content: "Have a nice day.") {
+    id
+    title
+    content
+    published
+  }
+}

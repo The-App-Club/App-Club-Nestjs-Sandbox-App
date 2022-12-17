@@ -1,0 +1,9 @@
+# Write your query or mutation here
+query {
+  posts {
+    id
+    title
+    content
+    published
+  }
+}
