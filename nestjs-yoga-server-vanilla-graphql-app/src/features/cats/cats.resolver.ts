@@ -46,6 +46,7 @@ export class CatsResolver {
 
   @Mutation('createCat')
   async create(@Args('createCatInput') args: CreateCatDto): Promise<Cat> {
+    console.log(args);
     const createdCat = this.catsService.create(args);
     pubSub.publish('catCreated', {catCreated: createdCat});
     return createdCat;

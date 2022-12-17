@@ -22,12 +22,15 @@ export class CatsService {
   // https://docs.nestjs.com/recipes/prisma#use-prisma-client-in-your-nestjs-services:~:text=Still%20inside%20the%20src%20directory%2C%20create%20a%20new%20file%20called%20post.service.ts%20and%20add%20the%20following%20code%20to%20it%3A
   async findAll(): Promise<ICat[]> {
     const response = await this.prisma.cat.findMany();
-    console.log(response);
     return response;
-    // return this.cats;
   }
 
-  findOneById(id: number): Cat {
-    return this.cats.find((cat) => cat.id === id);
+  async findOneById(id: number): Promise<ICat> {
+    const response = await this.prisma.cat.findUnique({
+      where: {
+        id,
+      },
+    });
+    return response;
   }
 }
